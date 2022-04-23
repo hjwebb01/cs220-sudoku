@@ -112,8 +112,12 @@ etc
 	}
 
 	public boolean gameOver() {
-		// TODO check that there are still open spots
-		return false;
+		for(int[] row: board) {
+			for(int val : row) {
+				if (val == 0) return false;
+			}
+		}
+		return true;
 	}
 
 	public boolean isBlank(int row, int col) {
